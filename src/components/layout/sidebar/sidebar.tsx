@@ -16,9 +16,9 @@ export default function Sidebar({ open = false, onClose }: Props) {
 
     return (
         <aside
-            className={`fixed left-0 top-0 z-40 h-screen w-72 border border-(--border-soft) bg-(--bg-surface) px-5 py-5 transition-transform duration-300
-      ${open ? "translate-x-0" : "-translate-x-full"
-                } md:translate-x-0 md:static md:flex md:flex-col`}
+            className={`fixed left-0 top-0 z-40 flex h-screen w-72 flex-col border-r border-(--border-soft) bg-(--bg-surface) px-5 py-5 transition-transform duration-300 
+            ${open ? "translate-x-0" : "-translate-x-full"}
+            md:translate-x-0`}
         >
             <div className="mb-8 flex items-center justify-between">
                 <div className="flex items-center gap-3">

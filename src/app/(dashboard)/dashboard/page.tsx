@@ -1,49 +1,36 @@
 import MetricCard from "@/components/dashboard/metric-card";
+import { dashboardMetrics } from "@/components/dashboard/metric-card.data";
+import QuickActions from "@/components/dashboard/quick-actions";
+import UrgentTasks from "@/components/dashboard/urgent-tasks";
+import TopUsers from "@/components/dashboard/top-users";
+import RecentActivity from "@/components/dashboard/recent-activity";
 
 export default function DashboardPage() {
-    const stats = [
-        {
-            title: "Total de tareas",
-            value: 24,
-            icon: "icon-[akar-icons--list]",
-        },
-        {
-            title: "Pendientes",
-            value: 10,
-            icon: "icon-[akar-icons--circle]",
-            color: "text-yellow-400",
-        },
-        {
-            title: "En proceso",
-            value: 8,
-            icon: "icon-[akar-icons--clock]",
-            color: "text-blue-400",
-        },
-        {
-            title: "Atrasadas",
-            value: 3,
-            icon: "icon-[tabler--alert-circle]",
-            color: "text-red-400",
-        },
-        {
-            title: "Completadas",
-            value: 3,
-            icon: "icon-[akar-icons--check]",
-            color: "text-green-400",
-        },
-    ];
-
     return (
-        <div>
-            <h1 className="text-2xl font-semibold mb-6">
-                Dashboard 🚀
-            </h1>
+        <section>
+            <div className="mb-6">
+                <h1 className="text-2xl font-semibold tracking-tight">Dashboard</h1>
+                <p className="mt-1 text-sm text-(--text-muted)">
+                    Resumen general del sistema
+                </p>
+            </div>
 
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-                {stats.map((stat) => (
-                    <MetricCard key={stat.title} {...stat} />
+            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
+                {dashboardMetrics.map((metric) => (
+                    <MetricCard key={metric.title} {...metric} />
                 ))}
             </div>
-        </div>
+
+            <div className="mt-6 grid gap-8 xl:grid-cols-[1fr_280px]">
+                <div className="space-y-8">
+                    <QuickActions />
+                    <UrgentTasks />
+                    <RecentActivity />
+                </div>
+
+                <TopUsers />
+            </div>
+        </section>
     );
 }
+
