@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@plugin "@iconify/tailwind4";
+
+:root {
+  --bg-main: #020617;
+  --bg-surface: #030c1a;
+  --bg-elevated: #071426;
+
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+  --primary-soft: #1e3a8a;
+  --accent: #38bdf8;
+
+  --text-main: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-subtle: #64748b;
+
+  --border: #0f172a;
+  --border-soft: #1e293b;
+
+  --success: #22c55e;
+  --warning: #eab308;
+  --danger: #ef4444;
+  --info: #38bdf8;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+}
